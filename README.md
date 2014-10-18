@@ -3,7 +3,7 @@
 A Clojure library designed to make your accounting fun.
 The Data Model is quite simple but theres alot around it:
 
-![alt text](https://github.com/snackycracky/equilibrium/doc/data-model.png "Logo Title Text 1")
+![alt text](https://github.com/snackycracky/equilibrium/raw/master/doc/data-model.png "Logo Title Text 1")
 
 
 ## dev history
