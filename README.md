@@ -6,7 +6,9 @@ The Data Model is quite simple but theres alot around it:
 ![alt text](https://github.com/snackycracky/equilibrium/raw/master/doc/data-model.png "Logo Title Text 1")
 
 
-## dev history
+## setup project history
+
+### cassandra
 
 First install and start cassandra:
 
@@ -18,6 +20,8 @@ First install and start cassandra:
 the actual cassandra shell can be reached with:
 
     cqlsh
+
+### clojure
 
 then install clojure and init a lein project
 
@@ -41,4 +45,33 @@ the problem occured that the keyspace was not set globally.
 In the file `testing.clj` are working examples which use the keyspace in the queries.
 
 
+### ide for clujure
 
+to use intellij idea there is a plugin called `la-clojure`
+
+follow the instructinos on the page to set up the ide:
+https://github.com/JetBrains/la-clojure
+
+
+
+## data modeling
+
+the https://github.com/twissandra/twissandra app is quite nice for reference concerns.
+
+    CREATE TABLE acc_entry (
+        acc_entry_id uuid PRIMARY KEY,
+        date timestampx,
+        notes text,
+        value float,
+        category_name text,
+        account_name text,
+        destination_account text
+    )
+
+    CREATE TABLE category (
+        category_name text PRIMARY KEY
+    )
+
+    CREATE TABLE account (
+        account_name text PRIMARY KEY
+    )
