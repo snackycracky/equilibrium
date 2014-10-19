@@ -60,7 +60,7 @@ the https://github.com/twissandra/twissandra app is quite nice for reference con
 
     CREATE TABLE acc_entry (
         acc_entry_id uuid PRIMARY KEY,
-        date timestampx,
+        date timestamp,
         notes text,
         value float,
         category_name text,
