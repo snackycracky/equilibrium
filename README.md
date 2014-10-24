@@ -57,15 +57,28 @@ https://github.com/JetBrains/la-clojure
 ## data modeling
 
 the https://github.com/twissandra/twissandra app is quite nice for reference concerns.
+http://www.datastax.com/documentation/cql/3.0/cql/cql_reference/tabProp.html is also a great source of information
 
-    CREATE TABLE account_entry (
-        acc_entry_id uuid PRIMARY KEY,
-        date timestamp,
+    CREATE TABLE account_entry ( 
+        entry_time timestamp,
         notes text,
         value float,
         balance float,
         category_name list<text>,
         account_name text,
         target_account text,
-        destination_account text
+        destination_account text,
+        PRIMARY KEY (account_name, date)
     ) 
+    
+    
+a query would look like:
+
+    select * from account_entry where account_name = 'Kasse'
+    select * from account_entry where account_name = 'Kasse' and entry_time > '2014-1-1 00:00:00' and entry_time < '2014-2-1 00:00:00'
+    select * from account_entry where category_name contains 'Groceries'
+    
+inserting data would look like:
+
+    INSERT INTO account_entry (entry_time, notes, value, category_name, account_name) VALUES ('2014-01-01 00:12:00', 'coffee', '2.5', ['food','coffee'], 'cash');
+    
