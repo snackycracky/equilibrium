@@ -58,20 +58,14 @@ https://github.com/JetBrains/la-clojure
 
 the https://github.com/twissandra/twissandra app is quite nice for reference concerns.
 
-    CREATE TABLE acc_entry (
+    CREATE TABLE account_entry (
         acc_entry_id uuid PRIMARY KEY,
         date timestamp,
         notes text,
         value float,
+        balance float,
         category_name text,
         account_name text,
+        target_account text,
         destination_account text
-    )
-
-    CREATE TABLE category (
-        category_name text PRIMARY KEY
-    )
-
-    CREATE TABLE account (
-        account_name text PRIMARY KEY
-    )
+    ) 
