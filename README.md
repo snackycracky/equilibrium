@@ -64,7 +64,7 @@ the https://github.com/twissandra/twissandra app is quite nice for reference con
         notes text,
         value float,
         balance float,
-        category_name text,
+        category_name list<text>,
         account_name text,
         target_account text,
         destination_account text
